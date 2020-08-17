@@ -16,11 +16,8 @@ def ner():
       result = StringIO()
       sys.stdout = result
       nlp=stanza.Pipeline('fr')
-      text=request.query_string
-      doc = nlp(text)
-      print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')
-      result_string = result.getvalue()
-      return result_string
+      
+      return request.query_string
 
 if __name__ == '__main__':
     app.run(port=5005, debug=True)
