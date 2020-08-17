@@ -4,9 +4,9 @@ import stanza
 app = Flask(__name__)
 nlp=stanza.Pipeline('fr')
 
-@app.route('/ner', methods=['GET', 'POST', 'PUT'])
+@app.route('/ner', methods=['GET'])
 def ner():
-      text=request.args.get('username')
+      text=request.args.get('text')
       doc = nlp(text)
       return doc.entities() 
    
