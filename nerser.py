@@ -12,12 +12,10 @@ app = Flask(__name__)
 
 @app.route('/ner', methods=['GET', 'POST'])
 def ner():
-      old_stdout = sys.stdout
-      result = StringIO()
-      sys.stdout = result
       nlp=stanza.Pipeline('fr')
-      
-      return request.query_string
+      text=request.args.get('text')
+      doc = nlp(text)
+      return doc.entities
 
 if __name__ == '__main__':
     app.run(port=5005, debug=True)
