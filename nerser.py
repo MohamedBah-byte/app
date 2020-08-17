@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 from flask_restful import Api, Resource, reqparse
 import stanza
 app = Flask(__name__)
