@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 import stanza
-
+stanfordnlp.download('fr')
 app = Flask(__name__)
 api = Api(app)
 nlp=stanza.Pipeline('fr')
