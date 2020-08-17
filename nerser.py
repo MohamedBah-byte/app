@@ -6,10 +6,10 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/ner', methods=['GET'])
+@app.route('/ner/<text>')
 def ner():
       nlp=stanza.Pipeline('fr')
-      text=request.args.get('text', default = '', type = str)
+      
       doc = nlp(text)
       print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')
       return "done"
