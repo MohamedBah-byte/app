@@ -9,7 +9,7 @@ nlp=stanza.Pipeline('fr')
 class NEREntinty(Resource):
     def get(self, text):
         doc = nlp(Resource)
-        return doc
+        return doc.entities()
 
 api.add_resource(NEREntinty)
 if __name__ == '__main__':
