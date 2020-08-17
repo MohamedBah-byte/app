@@ -12,4 +12,4 @@ def get(self, text):
       return doc.entities()
 
 if __name__ == '__main__':
-    app.run(port='5005')
+    app.run()
