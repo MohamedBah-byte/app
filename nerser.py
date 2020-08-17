@@ -9,7 +9,7 @@ def ner():
       nlp=stanza.Pipeline('fr')
       text=request.args.get('text', default = '', type = str)
       doc = nlp(text)
-      return doc
+      return doc.entities()
    
 if __name__ == '__main__':
     app.run(port=5005, debug=True)
