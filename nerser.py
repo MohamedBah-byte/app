@@ -19,5 +19,5 @@ def ner():
       return str(doc.entities).strip('[]')
 
 if __name__ == '__main__':
-      stanza.download('fr')
+    stanza.download('fr')
     app.run(port=5005, debug=True)
