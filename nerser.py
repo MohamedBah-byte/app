@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 @app.route('/ner', methods=['GET', 'POST'])
 def ner():
+      stanza.download('fr')
       nlp=stanza.Pipeline('fr')
       text=request.args.get('text')
       doc = nlp(text)
