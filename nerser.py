@@ -3,8 +3,7 @@ from flask import request
 from flask_restful import Api, Resource, reqparse
 import stanza
 import json
-from io import StringIO 
-import sys
+
 
 
 app = Flask(__name__)
